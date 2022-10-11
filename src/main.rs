@@ -4,7 +4,7 @@ use solana_program::{
     native_token::LAMPORTS_PER_SOL,
     pubkey::Pubkey,
 };
-
+use spl_token::state::Account as TokenAccount;
 
 fn main() {
     let client = RpcClient::new("https://api.devnet.solana.com");
@@ -22,5 +22,8 @@ fn main() {
             account.as_ref().unwrap().lamports%LAMPORTS_PER_SOL,
         );
     }
+
+    // client.get_token_account()
+    // client.get_account_with_commitment("")
 
 }
